@@ -54,8 +54,6 @@ class ViewController: UIViewController {
         }
         
         
-        
-        
         boey1.isUserInteractionEnabled = true
         boey2.isUserInteractionEnabled = true
         boey3.isUserInteractionEnabled = true
@@ -65,9 +63,6 @@ class ViewController: UIViewController {
         boey7.isUserInteractionEnabled = true
         boey8.isUserInteractionEnabled = true
         boey9.isUserInteractionEnabled = true
-        
-        
-        
         
         let recognizer1 = UITapGestureRecognizer(target: self, action: #selector(increaseScore))
         let recognizer2 = UITapGestureRecognizer(target: self, action: #selector(increaseScore))
@@ -98,9 +93,7 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
         hideTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(hideBoey), userInfo: nil, repeats: true)
          
-        
         hideBoey()
-        
     }
     
     
@@ -116,10 +109,6 @@ class ViewController: UIViewController {
         boeyArray[random].isHidden = false
         
     }
-    
-    
-    
-    
     
     @objc func increaseScore(){
         score += 1
@@ -146,7 +135,6 @@ class ViewController: UIViewController {
                 UserDefaults.standard.set(self.highScore, forKey: "highscore")
             }
             
-            
             // Alert
             
             let alert = UIAlertController(title: "Time's Up", message: "Do you want to play again ?", preferredStyle: UIAlertController.Style.alert)
@@ -161,21 +149,12 @@ class ViewController: UIViewController {
                 
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countDown), userInfo: nil, repeats: true)
                 self.hideTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(self.hideBoey), userInfo: nil, repeats: true)
-                
-                
             }
             
             alert.addAction(okButton)
             alert.addAction(replayButton)
             self.present(alert, animated: true, completion: nil)
-            
-            
-            
         }
-        
     }
-    
-    
-    
 }
 
